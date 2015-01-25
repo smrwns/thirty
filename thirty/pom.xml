@@ -37,14 +37,14 @@
 		<finalName>thirty</finalName>
 		<directory>${project.basedir}/target</directory>
 		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-		<outputDirectory>${project.basedir}/classes</outputDirectory>
+		<outputDirectory>${project.build.directory}/classes</outputDirectory>
 		<resources>
 			<resource>
 				<directory>${project.basedir}/src/main/resources</directory>
 			</resource>
 		</resources>
 		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
-		<testOutputDirectory>${project.basedir}/test-classes</testOutputDirectory>
+		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
 		<testResources>
 			<testResource>
 				<directory>${project.basedir}/src/test/resouces</directory>
