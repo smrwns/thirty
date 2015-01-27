@@ -19,7 +19,27 @@
 	</properties>
 	
 	<dependencies>
-        <!-- servlet -->
+		<!-- DB -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.185</version>
+		</dependency>
+		
+		<!-- Persistence -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+	
+        <!-- Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -27,14 +47,14 @@
             <scope>provided</scope>
         </dependency>
         
-		<!-- JSTL (Jsp Standard Tag Library -->
+		<!-- Tag Library -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 		
-		<!-- org.springframework -->
+		<!-- IoC Container -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -84,13 +104,21 @@
 			</exclusions>
 		</dependency>
 		
-		<!-- test -->
+		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Layout -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>thirty</finalName>
