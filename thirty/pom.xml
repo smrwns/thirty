@@ -105,6 +105,15 @@
 			<version>1.8.2</version>
 		</dependency>
 		
+		<!-- collections -->
+		<!--
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+		 -->		
+		
 		<!-- Log -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
