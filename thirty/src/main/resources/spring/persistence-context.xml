@@ -13,7 +13,7 @@
 	<tx:annotation-driven proxy-target-class="true" />
 	
 	<!-- Embedded db -->
-	<jdbc:embedded-database id="dataSource" type="HSQL">
+	<jdbc:embedded-database id="dataSource" type="H2">
 	</jdbc:embedded-database>
 	
 	<jdbc:initialize-database data-source="dataSource">
