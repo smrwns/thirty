@@ -1,21 +1,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smrwns.thirty.modules.board.BoardRepository">
 
-
 	<sql id="searchContextWhere">
 		<if test="s_keyword != null and s_keyword != ''">
 			<choose>
 				<when test="s_search_type != null and s_search_type == 'title'">
-					AND A.TITLE_LIKE '%' || #{s_keyword} || '%'
+					AND A.TITLE LIKE '%' || #{s_keyword} || '%'
 				</when>			
 				<when test="s_search_type != null and s_search_type == 'desc'">
 					AND A.DESC LIKE '%' || #{s_keyword} || '%'
-				</when>			
+				</when>
+				<otherwise>
+					AND (
+						A.TITLE LIKE '%' || #{s_keyword} || '%'
+						OR A.DESC LIKE '%' || #{s_keyword} || '%'
+					)
+				</otherwise>
 			</choose>
 		</if>
 	</sql>
 
-	
 	<select id="getTotalRowCountBySearchContext" resultType="Long">
 		SELECT
 			COUNT(A.ID)

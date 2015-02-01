@@ -4,16 +4,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <!-- 검색 -->
-<form id="search_form" name="search_form" action="list" method="get">
-	<input type="hidden" name="o_field" value="${searchContext.o_field }"/>
-	<input type="hidden" name="o_direction" value="${searchContext.o_direction }"/>
+<form id="search_form" name="search_form" action="/board/list" method="get">
+	<input type="hidden" name="order_field" value="${searchContext.order_field }"/>
+	<input type="hidden" name="order_direction" value="${searchContext.order_direction }"/>
 	
-	<select name="p_rowsize">
-		<option value="5" <c:if test="${searchContext.p_rowsize eq 5}">selected="selected"</c:if>>5줄</option>
-		<option value="10"<c:if test="${searchContext.p_rowsize eq 10}">selected="selected"</c:if>>10줄</option>
-		<option value="20"<c:if test="${searchContext.p_rowsize eq 20}">selected="selected"</c:if>>20줄</option>
-		<option value="30"<c:if test="${searchContext.p_rowsize eq 30}">selected="selected"</c:if>>30줄</option>
-		<option value="50"<c:if test="${searchContext.p_rowsize eq 50}">selected="selected"</c:if>>50줄</option>
+	<select name="rowCountPerPage">
+		<option value="5" <c:if test="${searchContext.rowCountPerPage eq 5 }">selected="selected"</c:if>>5줄</option>
+		<option value="10"<c:if test="${searchContext.rowCountPerPage eq 10}">selected="selected"</c:if>>10줄</option>
+		<option value="20"<c:if test="${searchContext.rowCountPerPage eq 20}">selected="selected"</c:if>>20줄</option>
+		<option value="30"<c:if test="${searchContext.rowCountPerPage eq 30}">selected="selected"</c:if>>30줄</option>
+		<option value="50"<c:if test="${searchContext.rowCountPerPage eq 50}">selected="selected"</c:if>>50줄</option>
 	</select>
 	<select name="s_search_type">
 		<option value="">전체</option>
@@ -22,7 +22,7 @@
 	</select>
 	<input type="text" name="s_keyword" value="${searchContext.s_keyword}" />
 	
-	<input type="button" value="검색" onclick="" />
+	<input type="submit" value="검색" />
 </form>
 
 

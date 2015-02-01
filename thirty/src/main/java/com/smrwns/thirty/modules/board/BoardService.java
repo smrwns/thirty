@@ -18,8 +18,8 @@ public class BoardService {
 	@Transactional(readOnly = true)
 	public List<Board> getBoardListByContext(BoardSearchContext searchContext) {
 		
-		long p_totalcount = boardRepository.getTotalRowCountBySearchContext(searchContext);
-		searchContext.setP_totalcount(p_totalcount);
+		long totalRowCount = boardRepository.getTotalRowCountBySearchContext(searchContext);
+		searchContext.setTotalRowCount(totalRowCount);
 		List<Board> boardList = boardRepository.getListBySearchContext(searchContext);
 		
 		return boardList;
