@@ -7,6 +7,7 @@ public abstract class SearchContext {
 	private int nowPage = 1;
 	private int rowCountPerPage = 10;
 	private int pageCountPerPage = 10;
+	private int totalPageCount;
 	private long totalRowCount;
 	
 	private int start_rownum;
@@ -19,9 +20,9 @@ public abstract class SearchContext {
 		this.end_rownum = this.nowPage * this.rowCountPerPage;
 		this.start_rownum = this.end_rownum - (this.rowCountPerPage-1);
 		
-		this.pageCountPerPage = (int) Math.ceil((double) totalRowCount/ (double) rowCountPerPage );
-		if(this.pageCountPerPage == 0) {
-			this.pageCountPerPage = 1;
+		this.totalPageCount = (int) Math.ceil((double) totalRowCount/ (double) rowCountPerPage );
+		if(this.totalPageCount == 0) {
+			this.totalPageCount = 1;
 		}
 	}
 	
@@ -36,7 +37,7 @@ public abstract class SearchContext {
 		URLBuilder builder = new URLBuilder();
 		builder.addParameter("nowPage", this.nowPage, "");
 		builder.addParameter("rowCountPerPage", this.rowCountPerPage, "");
-		builder.addParameter("pageCountPerPage", this.pageCountPerPage, "");
+		builder.addParameter("totalPageCount", this.totalPageCount, "");
 		return builder.toString();
 	}
 	
@@ -77,6 +78,7 @@ public abstract class SearchContext {
 
 	public void setTotalRowCount(long totalRowCount) {
 		this.totalRowCount = totalRowCount;
+		this.calculateRowNum();
 	}
 
 	public int getStart_rownum() {
