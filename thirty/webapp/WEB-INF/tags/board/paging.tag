@@ -42,11 +42,11 @@
 <script type="text/javascript">
 var totalRowCount = ${totalRowCount};
 var PagingManager = {
-		_searchForm : document.search_form,
+		searchForm : document.search_form,
 		
 		go : function(nowPage) {
-			this._searchForm.nowPage.value = nowPage;
-			this._searchForm.submit();
+			this.searchForm.nowPage.value = nowPage;
+			this.searchForm.submit();
 		}
 }
 </script>

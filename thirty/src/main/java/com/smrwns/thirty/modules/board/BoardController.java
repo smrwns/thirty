@@ -19,6 +19,13 @@ public class BoardController {
 	
 	@RequestMapping("/list")
 	public String list(BoardSearchContext searchContext, Model model) {
+		if(searchContext.getOrder_field() == null) {
+			searchContext.setOrder_field("A.CREATE_DT");
+		}
+		if(searchContext.getOrder_direction() == null) {
+			searchContext.setOrder_direction("DESC");
+		}
+		
 		List<Board> boardList = boardService.getBoardListByContext(searchContext);
 
 		model.addAttribute("boardList", boardList);
