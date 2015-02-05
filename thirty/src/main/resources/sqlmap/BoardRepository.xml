@@ -34,8 +34,8 @@
 		SELECT A.*
 		FROM (	
 				SELECT	
-					ROWNUM() as RNUM,
-					A.*
+					A.*,
+					ROWNUM() as RNUM
 				FROM	
 					(SELECT A.* FROM BOARD A ORDER BY ${order_field} ${order_direction}) A
 				WHERE	

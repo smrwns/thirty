@@ -4,7 +4,7 @@ import com.smrwns.thirty.common.web.URLBuilder;
 
 public abstract class SearchContext {
 	
-	private int nowPage = 1;
+	private int page = 1;
 	private int rowCountPerPage = 10;
 	private int pageCountPerPage = 10;
 	private int totalPageCount;
@@ -17,7 +17,7 @@ public abstract class SearchContext {
 	private String order_field;
 	
 	public void calculateRowNum() {
-		this.end_rownum = this.nowPage * this.rowCountPerPage;
+		this.end_rownum = this.page * this.rowCountPerPage;
 		this.start_rownum = this.end_rownum - (this.rowCountPerPage-1);
 		
 		this.totalPageCount = (int) Math.ceil((double) totalRowCount/ (double) rowCountPerPage );
@@ -35,7 +35,7 @@ public abstract class SearchContext {
 
 	public String getPagingParam() {
 		URLBuilder builder = new URLBuilder();
-		builder.addParameter("nowPage", this.nowPage, "");
+		builder.addParameter("page", this.page, "");
 		builder.addParameter("rowCountPerPage", this.rowCountPerPage, "");
 		builder.addParameter("totalPageCount", this.totalPageCount, "");
 		return builder.toString();
@@ -46,14 +46,13 @@ public abstract class SearchContext {
 		return getSearchParam() +"&"+ getPagingParam() +"&"+ getOrderParam();
 	}
 
-	
 	//getter, setter
-	public int getNowPage() {
-		return nowPage;
+	public int getPage() {
+		return page;
 	}
 
-	public void setNowPage(int nowPage) {
-		this.nowPage = nowPage;
+	public void setPage(int page) {
+		this.page = page;
 	}
 
 	public int getRowCountPerPage() {
@@ -70,6 +69,14 @@ public abstract class SearchContext {
 
 	public void setPageCountPerPage(int pageCountPerPage) {
 		this.pageCountPerPage = pageCountPerPage;
+	}
+
+	public int getTotalPageCount() {
+		return totalPageCount;
+	}
+
+	public void setTotalPageCount(int totalPageCount) {
+		this.totalPageCount = totalPageCount;
 	}
 
 	public long getTotalRowCount() {
@@ -112,5 +119,4 @@ public abstract class SearchContext {
 	public void setOrder_field(String order_field) {
 		this.order_field = order_field;
 	}
-	
 }
