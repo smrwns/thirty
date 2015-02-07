@@ -6,9 +6,9 @@
 
 <!-- 검색 -->
 <form id="searchForm" name="searchForm" action="/board/list" method="get">
-	<input type="hidden" name="order_field" value="${searchContext.order_field }"/>
-	<input type="hidden" name="order_direction" value="${searchContext.order_direction }"/>
-	<input type="hidden" name="page" value="${searchContext.page}" />
+	<input type="hidden" name="orderField" value="${searchContext.orderField }"/>
+	<input type="hidden" name="orderDirection" value="${searchContext.orderDirection }"/>
+	<input type="hidden" name="numPage" value="${searchContext.numPage}" />
 	
 	<select name="rowCountPerPage">
 		<option value="5" <c:if test="${searchContext.rowCountPerPage eq 5 }">selected="selected"</c:if>>5줄</option>

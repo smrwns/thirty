@@ -37,12 +37,12 @@
 					A.*,
 					ROWNUM() as RNUM
 				FROM	
-					(SELECT A.* FROM BOARD A ORDER BY ${order_field} ${order_direction}) A
+					(SELECT A.* FROM BOARD A ORDER BY ${orderField} ${orderDirection}) A
 				WHERE	
 					1=1
 					<include refid="searchContextWhere"/>
 		) A
-		WHERE RNUM BETWEEN #{start_rownum} AND #{end_rownum}
+		WHERE RNUM BETWEEN #{startRownum} AND #{endRownum}
 				
 	</select>
 	
