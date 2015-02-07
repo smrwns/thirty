@@ -5,29 +5,29 @@ import com.smrwns.thirty.common.web.support.SearchContext;
 
 public class BoardSearchContext extends SearchContext {
 	
-	private String s_keyword;
-	private String s_search_type;
+	private String searchKeyword;
+	private String searchType;
 	
 	
 	@Override
 	public String getSearchParam() {
 		URLBuilder builder = new URLBuilder();
-		builder.addParameter("s_keyword", this.s_keyword, "");
-		builder.addParameter("s_search_type", this.s_search_type, "");
+		builder.addParameter("searchkeyword", this.searchKeyword, "");
+		builder.addParameter("searchType", this.searchType, "");
 		return builder.toString();
 	}
 	
-	public String getS_keyword() {
-		return s_keyword;
+	public String getSearchKeyword() {
+		return searchKeyword;
 	}
-	public void setS_keyword(String s_keyword) {
-		this.s_keyword = s_keyword;
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
 	}
-	public String getS_search_type() {
-		return s_search_type;
+	public String getSearchType() {
+		return searchType;
 	}
-	public void setS_search_type(String s_search_type) {
-		this.s_search_type = s_search_type;
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
 	}
 	
 

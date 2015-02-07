@@ -17,14 +17,13 @@
 		<option value="30"<c:if test="${searchContext.rowCountPerPage eq 30}">selected="selected"</c:if>>30줄</option>
 		<option value="50"<c:if test="${searchContext.rowCountPerPage eq 50}">selected="selected"</c:if>>50줄</option>
 	</select>
-	<select name="s_search_type">
+	<select name="searchType">
 		<option value="">전체</option>
-		<option value="title" <c:if test="${searchContext.s_search_type eq 'title'}">selected="selected"</c:if>>제목</option>
-		<option value="desc" <c:if test="${searchContext.s_search_type eq 'desc'}">selected="selected"</c:if>>내용</option>
+		<option value="title" <c:if test="${searchContext.searchType eq 'title'}">selected="selected"</c:if>>제목</option>
+		<option value="desc" <c:if test="${searchContext.searchType eq 'desc'}">selected="selected"</c:if>>내용</option>
 	</select>
-	<input type="text" name="s_keyword" value="${searchContext.s_keyword}" />
-	
-	<input type="submit" value="검색" />
+	<input type="text" name="searchKeyword" value="${searchContext.searchKeyword}" />
+	<input type="button" value="검색" onclick="PagingManager.goFirstPage();"/>
 </form>
 
 

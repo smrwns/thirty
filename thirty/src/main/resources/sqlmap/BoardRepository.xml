@@ -2,18 +2,18 @@
 <mapper namespace="com.smrwns.thirty.modules.board.BoardRepository">
 
 	<sql id="searchContextWhere">
-		<if test="s_keyword != null and s_keyword != ''">
+		<if test="searchKeyword != null and searchKeyword != ''">
 			<choose>
-				<when test="s_search_type != null and s_search_type == 'title'">
-					AND A.TITLE LIKE '%' || #{s_keyword} || '%'
+				<when test="searchType != null and searchType == 'title'">
+					AND A.TITLE LIKE '%' || #{searchKeyword} || '%'
 				</when>			
-				<when test="s_search_type != null and s_search_type == 'desc'">
-					AND A.DESC LIKE '%' || #{s_keyword} || '%'
+				<when test="searchType != null and searchType == 'desc'">
+					AND A.DESC LIKE '%' || #{searchKeyword} || '%'
 				</when>
 				<otherwise>
 					AND (
-						A.TITLE LIKE '%' || #{s_keyword} || '%'
-						OR A.DESC LIKE '%' || #{s_keyword} || '%'
+						A.TITLE LIKE '%' || #{searchKeyword} || '%'
+						OR A.DESC LIKE '%' || #{searchKeyword} || '%'
 					)
 				</otherwise>
 			</choose>
