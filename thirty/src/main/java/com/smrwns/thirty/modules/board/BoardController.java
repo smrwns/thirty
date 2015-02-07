@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.smrwns.thirty.domains.Board;
@@ -34,5 +35,14 @@ public class BoardController {
 		return "/board/list";
 	}
 	
+	@RequestMapping("/{id}/view")
+	public String view(@PathVariable("id") int id, BoardSearchContext searchContext, Model model) {
+		//Board board = boardService.getById(id);
+		
+		model.addAttribute("board", null);
+		model.addAttribute("searchContext", searchContext);
+		
+		return "/board/view";
+	}
 	
 }
