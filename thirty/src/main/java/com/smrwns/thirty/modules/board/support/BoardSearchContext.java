@@ -12,7 +12,7 @@ public class BoardSearchContext extends SearchContext {
 	@Override
 	public String getSearchParam() {
 		URLBuilder builder = new URLBuilder();
-		builder.addParameter("searchkeyword", this.searchKeyword, "");
+		builder.addParameter("searchKeyword", this.searchKeyword, "");
 		builder.addParameter("searchType", this.searchType, "");
 		return builder.toString();
 	}

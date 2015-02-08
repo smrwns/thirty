@@ -41,7 +41,7 @@
 		<c:forEach items="${boardList}" var="board">
 			<tr>
 				<td>${board.id}</td>
-				<td>${board.title}</td>
+				<td><a href="${board.id}/view?${searchContext.allParam}">${board.title}</a></td>
 				<td>${board.desc}</td>
 				<td><fmt:formatDate value="${board.create_dt}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 			</tr>
