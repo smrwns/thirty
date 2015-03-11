@@ -37,9 +37,9 @@ public class BoardController {
 	
 	@RequestMapping("/{id}/view")
 	public String view(@PathVariable("id") int id, BoardSearchContext searchContext, Model model) {
-		//Board board = boardService.getById(id);
+		Board board = boardService.getBoardById(id);
 		
-		model.addAttribute("board", null);
+		model.addAttribute("board", board);
 		model.addAttribute("searchContext", searchContext);
 		
 		return "/board/view";

@@ -12,7 +12,7 @@ public class MainController {
 	
 	@RequestMapping("/main")
 	public void main() {
-		System.out.println("main controller execute");
+		System.out.println("main controller execute!");
 		mainService.main();
 	}
 }

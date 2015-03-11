@@ -12,5 +12,6 @@ public interface BoardRepository {
 
 	public long getTotalRowCountBySearchContext(BoardSearchContext searchContext);
 	public List<Board> getListBySearchContext(BoardSearchContext searchContext);
+	public Board getBoardById(long id);
 
 }

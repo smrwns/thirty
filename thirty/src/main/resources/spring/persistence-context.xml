@@ -12,7 +12,7 @@
 	<!-- Mark-driven -->
 	<tx:annotation-driven proxy-target-class="true" />
 	
-	<!-- Embedded db -->
+	<!-- Embedded db (Temp DB)-->
 	<jdbc:embedded-database id="dataSource" type="H2">
 	</jdbc:embedded-database>
 	

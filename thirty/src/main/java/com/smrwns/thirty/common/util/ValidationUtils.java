@@ -5,8 +5,7 @@ import java.util.Set;
 
 public class ValidationUtils {
 	
-	private ValidationUtils() {
-	}
+	private ValidationUtils() {}
 
 	public static boolean isNull(Object obj) {
 		if (obj == null)

@@ -25,4 +25,8 @@ public class BoardService {
 		return boardList;
 	}
 
+	public Board getBoardById(long id) {
+		return boardRepository.getBoardById(id);
+	}
+
 }
